@@ -1,0 +1,501 @@
+/* General Styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f7f7f7;
+  color: #333;
+}
+
+/* Navigation Bar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f4eae1;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 10px 20px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.firm-logo {
+  height: 100px; /* Adjust the height of the logo */
+  width: 100px;  /* Maintain aspect ratio */
+  object-fit: contain;
+}
+.navbar .logo a {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #ff6f61;
+  text-decoration: none;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links li {
+  position: relative;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #333;
+  font-size: 1rem;
+}
+/* Style for the dropdown menu */
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  min-width: 160px;
+  z-index: 1;
+
+}
+
+.dropdown-menu li {
+  padding: 1px;
+  white-space: nowrap;
+  font-family: Arial, Helvetica, sans-serif
+}
+
+.dropdown-menu li a {
+  text-decoration: none;
+  color: #333;
+  font-size: 12px;
+}
+
+/* Show the dropdown when hovering over the parent list item */
+.dropdown:hover .dropdown-menu {
+  width: 500px; /* Adjust dropdown width */
+  display: grid; /* Use CSS Grid */
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); /* Create responsive columns */
+  gap: 35px; /* Space between items */
+}
+
+.dropdown a {
+  text-decoration: none;
+  color: #333;
+  padding: 10px;
+  display: block;
+}
+.menuu a {
+  text-decoration: none;
+  color: #333;
+  padding: 10px;
+  display: block;
+}
+
+/* Optional: Add styles for the hover effect */
+.dropdown a:hover {
+  background-color: #f4f4f4;
+}
+
+.nav-links .expand {
+  font-size: 0.8rem;
+  color: #555;
+  margin-left: 5px;
+}
+
+.consult-btn {
+  background-color: #e3763f;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  font-size: 1rem;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.consult-btn:hover {
+  background-color: #be5a2c;
+}
+
+/* Secondary Options */
+.secondary-options {
+  background-color: #f7f7f7;
+  padding: 10px 0;
+}
+
+.secondary-options ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 0;
+  margin: 0;
+}
+
+.secondary-options li a {
+  text-decoration: none;
+  color: #666;
+  font-size: 0.9rem;
+  padding: 5px 10px;
+  transition: color 0.3s;
+}
+
+.secondary-options li a:hover {
+  color: #ff6f61;
+}
+
+/* Slider Section */
+.slider {
+  position: relative;
+  width: 100%;
+  height: 90vh;
+  overflow: hidden;
+}
+
+.slides {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+  min-width: 100%;
+  height: 90vh;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 2rem;
+  text-shadow: 0px 4px 6px rgba(0, 0, 0, 0.6);
+}
+
+.caption {
+  background: rgba(0, 0, 0, 0.5);
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-underline-position: below;
+}
+
+.controls {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  transform: translateY(-50%);
+}
+
+.controls button {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 1.5rem;
+  border-radius: 50%;
+}
+
+.controls button:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Features Section */
+.features {
+  text-align: center;
+  padding: 2rem;
+  background-color: #fff;
+}
+
+.features h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.features p {
+  font-size: 1rem;
+  margin-bottom: 2rem;
+  color: #555;
+}
+
+.options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.option1 {
+  background-image: url("kitchen.jpg");
+  background-color: #fff;
+  padding: 1.5rem;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  width: 250px;
+  text-align: center;
+  background-size: cover;
+}
+.option2 {
+  background-image: url(pufy.jpg);
+  background-color: #fff;
+  padding: 1.5rem;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  width: 250px;
+  text-align: center;
+  background-size: cover;
+}
+.option3 {
+  background-image: url(luxuryinteriors.jpg);
+  background-color: #fff;
+  padding: 1.5rem;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  width: 250px;
+  text-align: center;
+  background-size: cover;
+}
+.option4 {
+  background-image: url(renovation.jpg);
+  background-color: #fff;
+  padding: 1.5rem;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  width: 250px;
+  text-align: center;
+  background-size: cover;
+}
+
+.option h3 {
+  color: #ff6f61;
+  margin-bottom: 0.5rem;
+}
+
+.option button {
+  background-color: #ff6f61;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.option button:hover {
+  background-color: #e55b4c;
+}
+/* General Footer Styling */
+.footer {
+  background-color: #3a2a47;
+  color: white;
+  padding: 40px 20px;
+  font-family: Arial, sans-serif;
+}
+
+.footer-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Logo Section */
+.footer-logo {
+  text-align: center;
+}
+
+.footer-logo-img {
+  width: 120px;
+  margin-bottom: 20px;
+}
+
+.social-media a {
+  margin: 0 5px;
+  display: inline-block;
+}
+
+.social-media img {
+  width: 24px;
+  height: 24px;
+}
+
+/* Footer Sections */
+.footer-section {
+  text-align: left;
+}
+
+.footer-section h4 {
+  font-size: 16px;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section ul li {
+  margin-bottom: 10px;
+}
+
+.footer-section ul li a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.footer-section ul li a:hover {
+  text-decoration: underline;
+}
+
+/* Contact Section */
+.contact-icons a {
+  margin: 5px;
+}
+
+.contact-icons img {
+  width: 32px;
+  height: 32px;
+}
+
+/* App Download Links */
+.download-app {
+  text-align: center;
+}
+
+.app-links a {
+  margin: 0 10px;
+}
+
+.app-links img {
+  width: 120px;
+  height: auto;
+}
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  margin: 20px;
+}
+
+.card {
+  background: #ffffff;
+  border-radius: 30px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.card-content {
+  padding: 15px;
+  text-align: center;
+}
+
+.card-content h3 {
+  font-size: 1.5rem;
+  color: #4A4A4A;
+  margin-bottom: 10px;
+}
+
+.card-content p {
+  font-size: 1rem;
+  color: #777;
+  margin-bottom: 15px;
+}
+
+.card-content .arrow {
+  font-size: 1.5rem;
+  color: #FF5A5F;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+/* Container Styles */
+.inspiration-container {
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+/* Header Section */
+.header {
+  text-align: center;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.header h2 {
+  font-size: 2rem;
+  color: #4A4A4A;
+  margin-bottom: 10px;
+}
+
+.header p {
+  font-size: 1rem;
+  color: #777;
+}
+
+.header .view-all {
+  position: absolute;
+  right: 0;
+  top: 0;
+  color: #FF5A5F;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+/* Grid Section */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+/* Grid Items */
+.grid-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.grid-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.grid-item:hover img {
+  transform: scale(1.1);
+}
+
+.grid-item .label {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  font-weight: bold;
+}
