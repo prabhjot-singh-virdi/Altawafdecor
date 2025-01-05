@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Interface</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            padding: 20px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .card img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <!-- User Interface -->
+    <div id="user-page">
+        <div class="container">
+            <h1>Available Cards</h1>
+            <div class="grid" id="user-card-grid">
+                <!-- Dynamic Cards will be displayed here -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Fetch cards from the backend
+        async function fetchCards() {
+            try {
+                const response = await fetch('http://localhost:5001/api/cards');
+                if (!response.ok) {
+                    throw new Error('Failed to fetch cards.');
+                }
+                const fetchedCards = await response.json();
+                renderCards(fetchedCards);
+            } catch (error) {
+                console.error('Error fetching cards:', error);
+                alert('An error occurred while fetching the cards. Please try again later.');
+            }
+        }
+
+        // Render cards on the frontend
+        function renderCards(cards) {
+            const cardGrid = document.getElementById('user-card-grid'); // Corrected ID reference
+            cardGrid.innerHTML = ''; // Clear the grid before rendering
+
+            cards.forEach((card) => {
+                const cardElement = document.createElement('div');
+                cardElement.className = 'card';
+                cardElement.innerHTML = `
+                    <img src="${card.image}" alt="${card.name}">
+                    <h3>${card.name}</h3>
+                    <p>Room Size: ${card.size}</p>
+                `;
+                cardGrid.appendChild(cardElement);
+            });
+        }
+
+        // Initial data fetch
+        fetchCards();
+    </script>
+</body>
+</html>
